@@ -93,6 +93,8 @@ else:
 """ -------------- new class -------------- """
 
 if len(cars["Aston Martin DB12"] and cars["Dodge RAM"] and cars["Toyota Supra"]) == 1:
+    pass
+else:    
     print("Okay, now last question")
     answer5 = input("Do you prefer luxury, safety or fun? ").lower()
     if answer5 == "luxury":
