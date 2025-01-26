@@ -4,15 +4,13 @@ try:
               "To start, type 'start' ").lower()
     if start != "start":
         raise ValueError("To start the program, you have to write 'start'")
-except:
-    print("Error")
+finally:
+    print("")
 
 
 engine_on = False
 if start == "start":
     engine_on = True
-
-# while engine_on is True:
 
     cars = {
         "Dodge RAM": [],
@@ -22,17 +20,17 @@ if start == "start":
     }
 
 def question1():
-    answer1 = input("Do you like tanks? Type 'yes' or 'no' ").lower()
+    answer1 = input("Do you like tanks? Type 'yes' or 'no' ").lower().strip()
     if answer1 == "yes":
         cars["Dodge RAM"].append(1)
 
 def question2():
-    answer2 = input("Do you like to drift? Type 'yes' or 'no' ").lower()
+    answer2 = input("Do you like to drift? Type 'yes' or 'no' ").lower().strip()
     if answer2 == "yes":
         cars["Toyota Supra"].append(2)
 
 def question3():
-    answer3 = input("Is your surname 'Bond'? Type 'yes' or 'no' ").lower()
+    answer3 = input("Is your surname 'Bond'? Type 'yes' or 'no' ").lower().strip()
     if answer3 == "yes":
         cars["Aston Martin DB12"].append(3)
 
@@ -61,19 +59,14 @@ def answer(answer_dodge,answer_supra,answer_db12):
     elif cars["Aston Martin DB12"] == [3] and cars["Dodge RAM"] == [] and cars["Toyota Supra"] == []:
         print(answer_db12)
 
-
-""" ----------- new class ------------- """
-
 answer(answer_dodge,answer_supra,answer_db12)
 check = [cars.values()]
 ev = cars["Aston Martin DB12"] + cars["Dodge RAM"] + cars["Toyota Supra"]
-# print(ev)
-# print(len(ev))
 if len(ev) < 2:
     pass
 else:
     print("In that case, we need to ask another question.")
-    answer4 = input("Do you prefer speed, size or old school? ").lower()
+    answer4 = input("Do you prefer speed, size or old school? ").lower().strip()
     if answer4 == "speed":
         cars["Aston Martin DB12"].append(1)
         if len(cars["Aston Martin DB12"]) >= 2:
@@ -87,16 +80,12 @@ else:
         if len(cars["Toyota Supra"]) >= 2:
             print(answer_supra)
 
-# print(ev)
-# print(len(ev))
-
-""" -------------- new class -------------- """
 
 if len(cars["Aston Martin DB12"] and cars["Dodge RAM"] and cars["Toyota Supra"]) == 1:
     pass
 else:    
     print("Okay, now last question")
-    answer5 = input("Do you prefer luxury, safety or fun? ").lower()
+    answer5 = input("Do you prefer luxury, safety or fun? ").lower().strip()
     if answer5 == "luxury":
         cars["Aston Martin DB12"].append(1)
         if len(cars["Aston Martin DB12"]) >= 2:
@@ -110,9 +99,3 @@ else:
         if len(cars["Toyota Supra"]) >= 2:
             print(answer_supra)
 
-
-""" ------------ naw class "another" with charts from matplotlib and pandas ---------- """
-
-
-
-""" ------------- new class comparing with compared information about cars ------------- """
